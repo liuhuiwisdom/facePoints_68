@@ -1,27 +1,27 @@
 /*
  *
- * ´úÂëÃû³Æ£ºfaceKeypoints_68
- * ´úÂë¹¦ÄÜ£º¸ù¾ÝLBFÔ´´úÂëÐÞ¸Ä¶øÀ´£¬½â¾öÁË´úÂëÖÐµÄÒ»Ð©bug£¬²¢×öÁË·â×¡£¬Ö÷Òª¹¦ÄÜ
- *          ÊÇ¸ù¾ÝÈËÁ³¼ì²â»ñÈ¡µ½µÄÈËÁ³Î»ÖÃ£¬ÕÒ³ö68¸ö¹Ø¼üµãµÄÎ»ÖÃ¡£
+ * ä»£ç åç§°ï¼šfaceKeypoints_68
+ * ä»£ç åŠŸèƒ½ï¼šæ ¹æ®LBFæºä»£ç ä¿®æ”¹è€Œæ¥ï¼Œè§£å†³äº†ä»£ç ä¸­çš„ä¸€äº›bugï¼Œå¹¶åšäº†å°ä½ï¼Œä¸»è¦åŠŸèƒ½
+ *          æ˜¯æ ¹æ®äººè„¸æ£€æµ‹èŽ·å–åˆ°çš„äººè„¸ä½ç½®ï¼Œæ‰¾å‡º68ä¸ªå…³é”®ç‚¹çš„ä½ç½®ã€‚
  *          Input:
-               modelPath: LBF.model and regressor.model µÄ´æ·ÅÎ»ÖÃ
-	           cascadeName£º HarrÄ£°åÎÄ¼þµÄ´æ·ÅÎ»ÖÃ
-	           cv::Mat inputImage:´ý¼ì²âÍ¼Ïñ
+               modelPath: LBF.model and regressor.model çš„å­˜æ”¾ä½ç½®
+	           cascadeNameï¼š Haaræ¨¡æ¿æ–‡ä»¶çš„å­˜æ”¾ä½ç½®
+	           cv::Mat inputImage:å¾…æ£€æµ‹å›¾åƒ
 	        Output:
-	           Keypoints::getFaceKeypoints();»ñÈ¡ÈËÁ³¹Ø¼üµã
-	           FaceAlignment::getFaceAlignimg();»ñÈ¡¶ÔÆëºóµÄÈËÁ³Í¼Ïñ
-	           FaceAlignment::getFaceAlignPos(vector<Point2f>);»ñÈ¡¶ÔÆëºóÈËÁ³landmark×ø±ê
+	           Keypoints::getFaceKeypoints();èŽ·å–äººè„¸å…³é”®ç‚¹
+	           FaceAlignment::getFaceAlignimg();èŽ·å–å¯¹é½åŽçš„äººè„¸å›¾åƒ
+	           FaceAlignment::getFaceAlignPos(vector<Point2f>);èŽ·å–å¯¹é½åŽäººè„¸landmarkåæ ‡
 			   
-			¾ßÌå×ø±ê±êºÅ¼ûlandmark.jpg
- * ´úÂë×÷Õß£ºEthan
- * ´´½¨Ê±¼ä£º2015/7/25
- * ¸üÐÂÐÅÏ¢£º
- *           v1.1  ÐÞ¸ÄÁË¶ÁÈë¶àÕÅÍ¼Æ¬»á³öÏÖÌØÕ÷µãÖØ¸´µÄbug
- *                 ¼ÓÈëÁË±éÀúÎÄ¼þ¼ÐÏÂËùÓÐÍ¼Æ¬µÄ¹¦ÄÜ
- *           v1.2  ¼ÓÈëWarpAndRotation.cpp/WarpAndRotation.hÁ½¸öÎÄ¼þ
- *                 ÊµÏÖ¸ù¾ÝÈý¸öµã¶ÔÈËÁ³Í¼Ïñ½øÐÐÐý×ªµÄ¹¦ÄÜ
- *           v2.0  ±¾´ÎÐÞ¸ÄÔÚÔ­ÓÐ»ñÈ¡landmarkµãµÄ»ù´¡ÉÏ£¬¸ù¾Ýµã×ø±ê
- *                 ¶ÔÔ­Í¼Ïñ×öÁË²Ã¼ôºÍËõ·Å£¬µÃ³öµÄ½á¹ûÒÑ¾­¿ÉÒÔÖ±½ÓÓÃ
- *                 ÓÚÌØÕ÷µã³éÈ¡
- *			 v2.1  ÐÞ¸ÄÁË·¢ÏÖµÄÁ½¸öÍ¼ÏñÔ½½çµÄbug
+			å…·ä½“åæ ‡æ ‡å·è§landmark.jpg
+ * ä»£ç ä½œè€…ï¼šEthan
+ * åˆ›å»ºæ—¶é—´ï¼š2015/7/25
+ * æ›´æ–°ä¿¡æ¯ï¼š
+ *           v1.1  ä¿®æ”¹äº†è¯»å…¥å¤šå¼ å›¾ç‰‡ä¼šå‡ºçŽ°ç‰¹å¾ç‚¹é‡å¤çš„bug
+ *                 åŠ å…¥äº†éåŽ†æ–‡ä»¶å¤¹ä¸‹æ‰€æœ‰å›¾ç‰‡çš„åŠŸèƒ½
+ *           v1.2  åŠ å…¥WarpAndRotation.cpp/WarpAndRotation.hä¸¤ä¸ªæ–‡ä»¶
+ *                 å®žçŽ°æ ¹æ®ä¸‰ä¸ªç‚¹å¯¹äººè„¸å›¾åƒè¿›è¡Œæ—‹è½¬çš„åŠŸèƒ½
+ *           v2.0  æœ¬æ¬¡ä¿®æ”¹åœ¨åŽŸæœ‰èŽ·å–landmarkç‚¹çš„åŸºç¡€ä¸Šï¼Œæ ¹æ®ç‚¹åæ ‡
+ *                 å¯¹åŽŸå›¾åƒåšäº†è£å‰ªå’Œç¼©æ”¾ï¼Œå¾—å‡ºçš„ç»“æžœå·²ç»å¯ä»¥ç›´æŽ¥ç”¨
+ *                 äºŽç‰¹å¾ç‚¹æŠ½å–
+ *			 v2.1  ä¿®æ”¹äº†å‘çŽ°çš„ä¸¤ä¸ªå›¾åƒè¶Šç•Œçš„bug
  */
